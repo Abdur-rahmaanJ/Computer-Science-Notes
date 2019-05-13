@@ -1,0 +1,25 @@
+Q1. CREATE DATABASE worksheet1; USE worksheet1;
+
+Q2. CREATE TABLE q1 (id INT PRIMARY KEY, message CHAR(144));
+
+Q3. ALTER TABLE q1 ADD attime TIME;
+
+Q4: DROP TABLE q1;
+
+Q5: CREATE TABLE item (itemid INT PRIMARY KEY, itemname CHAR(25) UNIQUE NOT NULL, itemprice DOUBLE NOT NULL);
+
+Q6: CREATE TABLE stocklist (itemid INT AUTO_INCREMENT, shoplocation CHAR(40), count INT, PRIMARY KEY (itemid, shoplocation));
+
+Q7: SELECT firstname, familyname, salary FROM employees;
+
+Q8: SELECT firstname, familyname, job FROM employees WHERE empno = 6542;
+
+Q9: SELECT * FROM employees WHERE salary > 30000;
+
+Q10: SELECT deptname FROM employees, departments WHERE employees.deptno = departments.deptno AND empno = 1345;
+
+Q11: UPDATE employees SET salary=30000 WHERE empno=1585;
+
+Q12: DELETE FROM departments WHERE deptno=30;
+
+Q13: INSERT INTO departments VALUES(60,'Sales','Terenure','D1',7878);

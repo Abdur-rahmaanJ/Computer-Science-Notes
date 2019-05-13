@@ -1,0 +1,63 @@
+Worksheet 5 Suggested Solutions.
+
+Please report any errors to david.lillis@ucd.ie
+
+1.
+     CREATE DATABASE pets; USE pets;
+
+2.
+     CREATE TABLE owners (id INT PRIMARY KEY, name VARCHAR(30));
+     CREATE TABLE pet_types (id INT PRIMARY KEY, name VARCHAR(10));
+     CREATE TABLE pets (id INT PRIMARY KEY, name VARCHAR(20), type INT, owner INT, dob DATE, FOREIGN KEY (owner) REFERENCES owners(id),
+          FOREIGN KEY(type) REFERENCES pet_types(id));
+
+3.
+     Run the following from the Windows/Mac/Linux terminal
+     ... (not the MySQL terminal)
+
+     mysql -p < inserts.sql
+
+     ... or copy/paste the commands into the MySQL command terminal.
+
+4.
+     It is not allowed, because there is no owner with id=6.
+
+5.
+     First find the name of the foreign key constraint (for me it’s `pets_ibfk_2`)
+     SHOW CREATE TABLE pets;
+
+     ALTER TABLE pets DROP FOREIGN KEY pets_ibfk_2;
+     ALTER TABLE pets ADD CONSTRAINT fk1 FOREIGN KEY (type) REFERENCES pet_types(id) ON DELETE RESTRICT;
+
+     DELETE FROM pet_types WHERE id=3;
+
+     The delete is not allowed, because the pet ‘Iffy’ is a budgie and ON DELETE RESTRICT does not allow this.
+
+6.
+     ALTER TABLE pets DROP FOREIGN KEY fk1;
+     ALTER TABLE pets ADD CONSTRAINT fk1 FOREIGN KEY (type) REFERENCES pet_types(id) ON DELETE CASCADE;
+
+     DELETE FROM pet_types WHERE id=3;
+
+     In the ‘pet_types’ table, the budgie is deleted, and ‘Iffy’ is deleted from the pets table.
+
+7.
+     ALTER TABLE pets DROP FOREIGN KEY pets_ibfk_1;
+     ALTER TABLE pets ADD CONSTRAINT fk2 FOREIGN KEY (owner) REFERENCES owners(id) ON UPDATE CASCADE
+          ON DELETE SET NULL;
+
+     DELETE FROM owners WHERE id=4;
+
+     Henry is deleted from ‘owners’ and the ‘owner’ of Taffy is now NULL;
+
+     UPDATE owners SET id=7 WHERE id=1;
+
+     The ‘owner’ of Sean’s pets (Puddles, Greebo and Stitch) is now 7.
+
+8.
+     SELECT name FROM pets WHERE dob >= '2011-01-03' AND dob <= '2013-12-31';
+     SELECT owners.name FROM owners LEFT JOIN pets ON owners.id=pets.owner WHERE pets.id IS NULL;
+     SELECT DISTINCT owners.name FROM owners INNER JOIN pets ON owners.id=pets.owner WHERE type=1;
+     INSERT INTO pet_types VALUES(3, 'elephant');
+     INSERT INTO pets VALUES(11, 'Tiny', 3, 5, '2018-03-26');
+     In the pets table: ... FOREIGN KEY (owner) REFERENCES owners(id) ON DELETE CASCADE;

@@ -1,0 +1,18 @@
+Workhseet 3 Suggested Solutions
+
+Please report any errors to david.lillis@ucd.ie
+
+- SELECT * FROM customers;
+- SELECT customerName FROM customers WHERE city='Frankfurt';
+- SELECT customerName, city, phone FROM customers WHERE country='Germany';
+- SELECT productName, productLine FROM products;
+- SELECT city FROM offices;
+- SELECT DISTINCT jobTitle FROM employees;
+- SELECT firstName, lastName, city FROM employees JOIN offices USING(officeCode) WHERE jobTitle='President';
+- SELECT orderNumber, comments FROM orders WHERE comments IS NOT NULL;
+- SELECT orderNumber, customerName FROM orders JOIN customers USING(customerNumber);
+- SELECT customerName, orderNumber FROM customers LEFT JOIN orders USING(customerNumber) WHERE orderNumber IS NULL;
+- SELECT customerName FROM customers WHERE customerName LIKE '%Co' OR customerName LIKE '%Co.';
+- SELECT e.employeeNumber, e.firstName, e.lastName FROM employees AS e JOIN employees AS m ON e.reportsTo=m.employeeNumber WHERE m.firstName='Gerard' AND m.lastName=‘Bondur';
+- INSERT INTO productLines (productLine, textDescription) VALUES ('Computers', 'We now sell models of classic computers too!'), ('Helicopters', 'All kinds of choppers');
+- UPDATE employees SET officeCode=4 WHERE employeeNumber=1323.

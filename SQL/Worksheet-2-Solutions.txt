@@ -1,0 +1,162 @@
+1. Show the name and job title of any employee who is not a manager.
+
+SELECT name, job FROM employees WHERE job <> 'Manager';
++----------------+------------+
+| name           | job        |
++----------------+------------+
+| Sean Russell   | Trainer    |
+| Brendan Macken | Technician |
+| Sean O'Brien   | Designer   |
+| Denis Hickey   | Architect  |
+| Peter Stringer | Designer   |
+| Leo Cullen     | Trainer    |
++----------------+------------+
+6 rows in set (0.00 sec)
+
+2. Show a list of all employee names that begin with an “S”.
+
+SELECT name FROM employees WHERE name LIKE 's%';
++--------------+
+| name         |
++--------------+
+| Sean Russell |
+| Sean O'Brien |
++--------------+
+2 rows in set (0.00 sec)
+
+3. Show the name and salary of any employee who earns less than 35000 and more than 25000 (either of these is ok).
+
+SELECT name, salary FROM employees WHERE salary < 35000 AND salary > 25000;
+SELECT name, salary FROM employees WHERE salary BETWEEN 25001 AND 34999;
++--------------+--------+
+| name         | salary |
++--------------+--------+
+| Ronan O'Gara |  29000 |
++--------------+--------+
+1 row in set (0.00 sec)
+
+4. For each Designer, print their name, job title and the name of the department they work in.
+
+SELECT name, job, dept_name FROM employees AS e, departments AS d WHERE e.dept_no=d.dept_no AND job='Designer';
++----------------+----------+----------------+
+| name           | job      | dept_name      |
++----------------+----------+----------------+
+| Sean O'Brien   | Designer | Design         |
+| Peter Stringer | Designer | Implementation |
++----------------+----------+----------------+
+2 rows in set (0.00 sec)
+
+5.	Calculate the weekly salary for each employee that does not work in department number 30 (assume each year has 52 weeks). This should be rounded to the nearest integer value.
+SELECT name, ROUND(salary/52) FROM employees WHERE dept_no<>'30';
++------------------+------------------+
+| name             | ROUND(salary/52) |
++------------------+------------------+
+| Sean Russell     |              962 |
+| Brendan Macken   |              481 |
+| Sean O'Brien     |              962 |
+| Brian O'Driscoll |              865 |
+| Jamie Heaslip    |              904 |
+| Leo Cullen       |              865 |
++------------------+------------------+
+6 rows in set (0.00 sec)
+
+6. List all the divisions that are in this company (no division should be listed twice).
+
+SELECT DISTINCT division FROM departments;
++----------+
+| division |
++----------+
+| D1       |
+| D2       |
++----------+
+2 rows in set (0.00 sec)
+
+7. Show the names of all departments that do not have a manager.
+SELECT dept_name FROM departments WHERE manager_no IS NULL;
++-----------+
+| dept_name |
++-----------+
+| Strategy  |
++-----------+
+1 row in set (0.00 sec)
+
+8. Find all Designers and Managers who work in either department 10 or department 30.
+
+SELECT * FROM employees WHERE job IN ('Designer','Manager') AND dept_no IN ('10','30');
++--------+----------------+----------+--------+---------+------------+
+| emp_no | name           | job      | salary | dept_no | join_date  |
++--------+----------------+----------+--------+---------+------------+
+| 1345   | Ronan O'Gara   | Manager  |  29000 | 30      | 2018-12-25 |
+| 2525   | Peter Stringer | Designer |  25000 | 30      | 2017-01-16 |
+| 4567   | Jamie Heaslip  | Manager  |  47000 | 10      | 2004-10-21 |
++--------+----------------+----------+--------+---------+------------+
+3 rows in set (0.00 sec)
+
+9. Find all employees who either joined the company before 2005 and have a salary less than 30000 or are managers that earn more than 40000.
+
+SELECT * FROM employees WHERE (YEAR(join_date)<2005 AND salary<30000) OR (job='Manager' AND salary > 40000);
++--------+------------------+------------+--------+---------+------------+
+| emp_no | name             | job        | salary | dept_no | join_date  |
++--------+------------------+------------+--------+---------+------------+
+| 1238   | Brendan Macken   | Technician |  25000 | 20      | 2001-09-10 |
+| 1899   | Brian O'Driscoll | Manager    |  45000 | 20      | 1998-02-27 |
+| 4567   | Jamie Heaslip    | Manager    |  47000 | 10      | 2004-10-21 |
++--------+------------------+------------+--------+---------+------------+
+3 rows in set (0.00 sec)
+
+10. Display the names of all employees who work in an office in Belfield, Donnybrook or Killiney.
+
+SELECT name FROM employees AS e, departments AS d WHERE e.dept_no=d.dept_no AND office IN ('Belfield','Donnybrook','Killiney');
++------------------+
+| name             |
++------------------+
+| Brendan Macken   |
+| Ronan O'Gara     |
+| Sean O'Brien     |
+| Denis Hickey     |
+| Brian O'Driscoll |
+| Peter Stringer   |
++------------------+
+6 rows in set (0.01 sec)
+
+11. For each department, find its name, its office location and the name of its manager (you can exclude any department that does not have a manager). The name of the manager should be displayed in a column named "manager_name".
+
+SELECT dept_name, office, name AS manager_name FROM employees AS e, departments AS d WHERE e.emp_no=d.manager_no;
++----------------+------------+------------------+
+| dept_name      | office     | manager_name     |
++----------------+------------+------------------+
+| Training       | Lansdowne  | Jamie Heaslip    |
+| Design         | Belfield   | Brian O'Driscoll |
+| Implementation | Donnybrook | Ronan O'Gara     |
++----------------+------------+------------------+
+3 rows in set (0.00 sec)
+
+12. Make Leo Cullen (emp_no 6542) the manager of the Strategy department (either of these is ok).
+
+UPDATE departments SET manager_no='6542' WHERE dept_no='40';
+UPDATE departments SET manager_no='6542' WHERE depe_name='Strategy';
+
+13. For each employee who joined in the years 2000 to 2009 (inclusive), show their name, salary and year they joined (in a column called “join_year”) (either of these is OK, but the first one is better).
+
+SELECT name, salary, YEAR(join_date) AS join_year FROM employees WHERE YEAR(join_date) BETWEEN 2000 AND 2009;
+SELECT name, salary, YEAR(join_date) AS join_year FROM employees WHERE join_date BETWEEN '2000-01-01' AND '2009-12-31';
+
++----------------+--------+-----------+
+| name           | salary | join_year |
++----------------+--------+-----------+
+| Brendan Macken |  25000 |      2001 |
+| Denis Hickey   |  20000 |      2009 |
+| Jamie Heaslip  |  47000 |      2004 |
++----------------+--------+-----------+
+3 rows in set (0.00 sec)
+
+
+14.	In this company, every employee gets a gift one year after they join the company. For any employee who joined less than one year ago, find their name and the date they will get their gift (the last column should be named “gift_date”).
+
+SELECT name, DATE_ADD(join_date, INTERVAL 1 YEAR) AS gift_date FROM employees WHERE TIMESTAMPDIFF(MONTH,join_date,CURDATE()) < 12;
++--------------+------------+
+| name         | gift_date   |
++--------------+------------+
+| Ronan O'Gara | 2019-12-25 |
++--------------+------------+
+1 row in set (0.00 sec)

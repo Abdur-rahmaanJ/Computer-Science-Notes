@@ -1,0 +1,14 @@
+- SELECT COUNT(*) FROM products WHERE productLine='Classic Cars';
+- SELECT AVG(buyPrice) FROM products WHERE productLine='Planes';
+- SELECT SUM(MSRP) FROM products WHERE productLine='Vintage Cars';
+- SELECT SUM(quantityOrdered*priceEach) FROM orders INNER JOIN orderdetails USING(orderNumber) INNER JOIN products USING(productCode) WHERE orderDate >= '2004-01-01' AND orderDate < '2005-01-01' AND productLine='Classic Cars';
+- SELECT customerName, productCode, quantityOrdered FROM orderdetails INNER JOIN orders USING(orderNumber) INNER JOIN customers USING(customerNumber) WHERE quantityOrdered=(SELECT MAX(quantityOrdered) FROM orderdetails);
+- SELECT customerName, productCode, quantityOrdered FROM orderdetails INNER JOIN orders USING(orderNumber) INNER JOIN customers USING(customerNumber) WHERE quantityOrdered=(SELECT MIN(quantityOrdered) FROM orderdetails WHERE quantityOrdered>0);
+- SELECT productLine, COUNT(*) FROM products GROUP BY productLine;
+- SELECT productLine, AVG(quantityOrdered) FROM products INNER JOIN orderdetails USING(productCode) GROUP BY productLine;
+- SELECT productLine, COUNT(*) FROM products GROUP BY productLine HAVING COUNT(*)>10;
+- SELECT productName, MSRP FROM products ORDER BY MSRP DESC LIMIT 10;
+- CREATE VIEW ships AS SELECT * FROM products WHERE productLine='Ships';
+- SELECT customerName, SUM(amount) FROM payments INNER JOIN customers USING(customerNumber) GROUP BY customerNumber HAVING SUM(amount) > 250000;
+- SELECT customerName, city FROM customers WHERE city = ANY(SELECT city FROM offices);
+- SELECT customerName, city FROM customers INNER JOIN offices USING(city);
