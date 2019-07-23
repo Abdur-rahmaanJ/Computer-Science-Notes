@@ -1,0 +1,19 @@
+<h1>Buy a Song</h1>
+
+<%= form_tag('songo', :method => 'get') do %>
+  <p> Give me your name: </p> 
+	<%= text_field_tag 'buyer' %>
+  <p> Song you want to buy: </p> 
+	<%= text_field_tag 'song' %>
+    <%= submit_tag 'buy' %>
+<% end %>
+
+<% if params[:buyer] && params[:song] then %>
+    <% if @song1 && @actor then %>
+     <p>  "<%=h params[:buyer] %>" you are now the proud owner of "<%=h params[:song] %>" </p> 
+    <% elsif @actor.nil? then %>
+    <p> I am afraid that you are not in my database. </p> 
+    <% elsif @song1.nil? then %>
+    <p> I am fraid I do not have this song: <%=h params[:song] %>. </p> 
+    <% end %>
+<% end %>

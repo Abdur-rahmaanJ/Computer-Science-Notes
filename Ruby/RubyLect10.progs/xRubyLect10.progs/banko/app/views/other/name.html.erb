@@ -1,0 +1,15 @@
+<p> We are very pleased to welcome you our home mortgage page. </p>
+<p> Please enter your first and last name below: </p>
+
+<%= form_tag("name", :method => 'get') do %>
+  <p> First Name:
+	<%= text_field_tag 'fst_name' %>
+   <p> Last Name:
+	<%= text_field_tag 'lst_name' %>
+    <%= submit_tag 'send' %>
+<% end %>
+
+<% if @fname then %>
+     <p> Welcome <%= h @entry.first_name %>, let's go to the
+    <%= link_to 'next page', :controller => "other", :action => "index"  %>.</p>	
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Add a Song to the DB</h1>
+<p> Please enter Details Below: </p>
+<%= form_tag('song', :method => 'get') do %>
+  <p> Song Name:
+	<%= text_field_tag 'title' %>
+   <p> Artist:
+	<%= text_field_tag 'artist' %>
+   <p> Length of Track:
+	<%= text_field_tag 'length' %>
+   <p> Album its in:
+	<%= text_field_tag 'album' %>
+   <%= submit_tag 'send' %>
+<% end %>
+
+<p> Please 
+    <%= link_to 'review your inputs', :controller => "show", :action => "list_song"  %></p>

@@ -1,0 +1,10 @@
+<h1>Actor Listing</h1>
+<ul>
+<% @actors.each do |actor| %>
+	<li> <%=h actor.name %> the <%=h actor.status %>, likes  <%=h actor.likes %> : <%=h actor.id %> </li>
+<% end %>
+</ul>
+
+
+<p> Say 
+    <%= link_to 'Goodbye, Mark', :controller => 'goodbye', :action => 'wave', :id => "foobar" %></p>

@@ -1,0 +1,16 @@
+"Fname","Surname","Age"
+# THIS FILE CONTAINS PEOPLE
+# May 31 2014
+######################################################
+# 			All PEOPLE
+#######################################################
+# (1) This file can be very sensitive to errors.
+# (2) note, that there is no space after a comma
+# (3) all entries will be read as strings even the numbers
+# (4) we need to explicitly write code to ignore the commented lines
+#######################################################
+"Mark","Keane",49
+"Mahatma","Gandi",67
+"Grommit","Dog",10
+"Haroun","Al-raschid",56
+"Regina","Spector",31

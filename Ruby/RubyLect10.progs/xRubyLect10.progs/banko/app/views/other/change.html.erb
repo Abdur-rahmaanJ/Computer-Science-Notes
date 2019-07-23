@@ -1,0 +1,27 @@
+<h1> <p align="center"> Your Mortgage Details </p></h1>
+<p> So, we have your details as: </p>
+
+<p> <b>First Name:</b> <%=h @person.first_name %> </p>
+<p> <b>Last Name:</b> <%=h @person.last_name %> </p>
+<p> <b>Address:</b> <%=h @person.address %> </p>
+<p> <b>Salary:</b><%=h @person.salary %> </p>
+<p> <b>Loan:</b> <%=h @person.loan %> </p>
+<p> <b>Reason:</b> <%=h @person.loan_reason%> </p>
+<p> <b>Your ID:</b> <%=h @person.id %> </p>
+
+<p> So, <%= h @fname.capitalize %>, would you like to change your salary and loan amount: </p>
+<%= form_tag('change', :method => 'get') do %>
+   <p> Salary:
+	<%= text_field_tag 'salary', @salary %>
+   <p> Loan Amount:
+	<%= text_field_tag 'loan', @loan %>
+	<%= submit_tag 'send' %>
+<% end %>
+
+
+<% if @entry.salary then %>
+     <p> Please 
+   <%= link_to 'Ask For Quote Again', :controller => "other", :action => "quote"  %>
+<% end %>
+ or 
+<%= link_to 'Go Back to Start', :controller => "other", :action => "index" %> .

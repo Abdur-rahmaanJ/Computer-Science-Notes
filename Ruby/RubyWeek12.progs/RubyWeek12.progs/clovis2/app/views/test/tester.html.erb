@@ -1,0 +1,11 @@
+
+<th class="test"><%= link_to_criteria("name", "test", "tester") %></th>
+<th class="test"><%= link_to_criteria("artist", "test", "tester") %></th>
+<th class="test"><%= link_to_criteria("album", "test", "tester") %></th>
+<th class="test"><%= link_to_criteria("id", "test", "tester") %></th>
+
+<p> This is the Test/tester one: Criterion is <%=  @criterion %> </p>
+
+<% @out.each do |item| %>
+		<li> <%=h item.send(@criterion) %> <%=h item.id %> </li>
+<% end %>

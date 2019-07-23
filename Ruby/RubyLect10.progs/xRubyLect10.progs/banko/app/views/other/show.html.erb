@@ -1,0 +1,14 @@
+<h1> <p align="center"> Your Mortgage Details </p></h1>
+<p> So, we have your details as: </p>
+
+<p> <b>First Name:</b> <%=h @person.first_name %> </p>
+<p> <b>Last Name:</b> <%=h @person.last_name %> </p>
+<p> <b>Address:</b> <%=h @person.address %> </p>
+<p> <b>Salary:</b><%=h @person.salary %> </p>
+<p> <b>Loan:</b> <%=h @person.loan %> </p>
+<p> <b>Reason:</b> <%=h @person.loan_reason%> </p>
+<p> <b>Your ID:</b> <%=h @person.id %> </p>
+
+<p> Do you want to 
+<%= link_to 'Ask For Quote',  :controller => "other", :action => "quote"  %> or
+<%= link_to 'Go Back', :controller => "other", :action => "index" %> . </p>

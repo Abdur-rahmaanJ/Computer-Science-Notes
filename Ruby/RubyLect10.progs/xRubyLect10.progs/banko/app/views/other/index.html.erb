@@ -1,0 +1,19 @@
+<h1> <p align="center"> Your Mortgage Details </p></h1>
+<p> So, <%= h @fname.capitalize %>, let us get some more of your details: </p>
+<p><b>First Name:</b> <%= h @fname.capitalize %> </p>
+<p><b>Last Name:</b> <%= h @lname.capitalize %> </p>
+<%= form_tag('index', :method => 'get') do %>
+  <p> Address:
+	<%= text_field_tag 'st_name', @address %>
+   <p> Salary:
+	<%= text_field_tag 'salary', @salary %>
+	   <p> Loan Amount:
+	<%= text_field_tag 'loan', @loan %>
+	   <p> Loan Reason:
+	<%= text_field_tag 'reason', @loan_reason %>
+   <%= submit_tag 'send' %>
+<% end %>
+
+<% if @person.address then %>
+    <%=  link_to "show details", :controller => "other", :action => "show"  %></p>
+<% end %>

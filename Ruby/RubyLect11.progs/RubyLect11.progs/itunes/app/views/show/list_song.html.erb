@@ -1,0 +1,7 @@
+<h1>Song Listing</h1>
+<ul>
+<% @songs.each do |song| %>
+	<li> <%=h song.title %> by <%=h song.artist %>, in  <%=h song.in_album %> : <%=h song.id %> 
+	 [Owned by Actor ID <%=h song.actor_id %>] </li>
+<% end %>
+</ul>

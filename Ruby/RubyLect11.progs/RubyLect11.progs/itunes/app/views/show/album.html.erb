@@ -1,0 +1,19 @@
+<h1>Album Listing</h1>
+
+<%= form_tag('album', :method => 'get') do %>
+  <p> Search for an Album named:  </p> 
+	<%= text_field_tag 'name' %>
+    <%= submit_tag 'send' %>
+<% end %>
+
+<% if !@album_songs.empty? then %>
+<p> The Album "<%=h params[:name] %>" has the following tracks: </p> 
+<ul>
+<% @album_songs.each do |song| %>
+	<li> <%=h song.title %> by <%=h song.artist %> </li>
+<% end %>
+</ul>
+<p> The Album is <%=h @album_time %> minutes long. </p> 
+<% else %>
+<p> This Album is not in the database. </p> 
+<% end %>

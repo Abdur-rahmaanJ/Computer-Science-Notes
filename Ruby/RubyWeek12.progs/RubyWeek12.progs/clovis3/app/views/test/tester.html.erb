@@ -1,0 +1,15 @@
+<h1>Test#tester</h1>
+<p>Find me in app/views/test/tester.html.erb</p>
+
+<p>Clovis3 version where link_to_criterion is implemented in two helpers and it uses the right one</p>
+
+<th class="test"><%= link_to_criteria("name") %></th>
+<th class="test"><%= link_to_criteria("artist") %></th>
+<th class="test"><%= link_to_criteria("album") %></th>
+<th class="test"><%= link_to_criteria("id") %></th>
+
+<p> Criterion is <%=  @criterion2 %> </p>
+
+<% @out2.each do |item| %>
+		<li> <%=h item.send(@criterion2) %> <%=h item.id %> </li>
+<% end %>

@@ -1,0 +1,8 @@
+<h1> <p align="center"> Your Quote </p></h1>
+
+<p>  <%=h @message %> </p>
+
+<p> Would you like to
+<%= link_to 'Finish', :controller => "main", :action => "goodbye" %> or 
+<%= link_to 'Change Details',  :controller => "other", :action => "change"  %>
+</p> 

@@ -1,0 +1,14 @@
+<h1><p align="center"> <%= h @message %> to Monster & Leinster's</h1>
+
+<h1><p align="center"> End Page</h1>
+
+<p align="center"><%= link_to image_tag("monster.jpg"), 
+				:controller => "main", :action => "welcome" %> </p>
+				
+<h5> <p align="center"> [click logo to re-enter site] </p></h5> 
+
+<ul>
+<% @entries.each do |entry| %>
+	<li> <%=h entry.first_name %>, <%=h entry.last_name %> , <%=h entry.salary %>, <%=h entry.loan %> <%=h entry.id %></li> 
+<% end %>
+</ul>
