@@ -1,0 +1,10 @@
+*/results/*
+save.p
+*/.ipynb_checkpoints/
+*/None0000000.png
+*/__pycache__/
+*/.experiments
+*.pyc
+*/__pycache__/*
+.DS_Store
+temp.ppm

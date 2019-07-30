@@ -1,0 +1,118 @@
+/**
+ * JJTree template file created by SF JavaCC plugin 1.5.17+ wizard for JavaCC 1.5.0+
+ */options{  JDK_VERSION = "1.5";  VISITOR = true;
+  MULTI = true;
+  TRACK_TOKENS = true;
+  static = false;}PARSER_BEGIN(MapSQL)package mapsql.shell.parser;
+
+public class MapSQL{  public static void main(String args [])  {    System.out.println("Reading from standard input...");    System.out.print("Enter an expression like \"1+(2+3)*var;\" :");    try    {      SimpleNode n = new MapSQL(System.in).Start();      n.dump("");      System.out.println("Thank you.");    }    catch (Exception e)    {      System.out.println("Oops.");      System.out.println(e.getMessage());    }  }}PARSER_END(MapSQL)SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| < "//" (~[ "\n", "\r" ])*
+    (
+      "\n"
+    | "\r"
+    | "\r\n"
+    ) >
+| < "/*" (~[ "*" ])* "*"
+    (
+      ~[ "/" ] (~[ "*" ])* "*"
+    )*
+    "/" >
+}
+
+TOKEN [IGNORE_CASE]: /* KEYWORDS */
+{
+  < TABLE : "TABLE" >
+| < CREATE : "CREATE" >
+| < DROP : "DROP" >
+| < SELECT : "SELECT" >
+| < FROM : "FROM" >
+| < WHERE : "WHERE" >
+| < INSERT : "INSERT" >
+| < INTO : "INTO" >
+| < VALUES : "VALUES" >
+| < UPDATE : "UPDATE" >
+| < SET : "SET" >
+| < DELETE : "DELETE" >
+| < QUIT : "QUIT" >
+| < SOURCE : "SOURCE" >
+| < AND : "AND" >
+| < OR : "OR" >
+| < WILDCARD : "*" >
+| < INT : "INTEGER" | "INT" >
+| < CHAR : "CHAR" | "CHARACTER" >
+| < FIELD_MODIFIERS : "UNIQUE" | "NOT NULL" | "AUTO_INCREMENT" >
+| < COMPARISON_OPERATOR : "=" | "<>" | ">=" | "<=" | "<" | ">" | "LIKE" >
+}
+
+TOKEN : /* LITERALS */
+{
+  < LESS_THAN : "<" >
+| < GREATER_THAN : ">" >
+| < ADD_OPERATOR : "+" | "-" >
+| < STRING :
+	  "\"" ([ "*" ] | < LETTER > | < DIGIT > | "_" | "." | "'" | < ADVPUNCT >)* "\""
+	| "'" ([ "*" ] | < LETTER > | < DIGIT > | "_" | "." | < ADVPUNCT >)* "'" >
+| < IDENTIFIER : < LETTER > ( < LETTER > | "_" | "." | < DIGIT > )* >
+| < NUMBER_LITERAL :
+  	< DIGIT > [ "." ] < DIGIT > (["f", "F" ])?
+  | < DIGIT > (["l", "L"])?   
+  >
+| < #DIGIT: [ "0"-"9" ] ([ "0"-"9" ])* >
+| < #LETTER : [ "_", "a"-"z", "A"-"Z" ] >
+| < #ADVPUNCT : [ ":", "\\", "/", "?", ",", "@", "[", "]", "(", ")", " ", "!", "-", "=", "%" ] >
+}
+
+SimpleNode Start() : {} { (Statement())* { return jjtThis; } }
+
+// Statements
+void Statement() #void : {} {
+(
+  Source()
+| Quit()
+| (    CreateTable()
+  | Select()
+  | Insert()
+  | Update()
+  | Delete()
+  | DropTable()
+  ) ";"
+)
+}
+
+void CreateTable() : {} { < CREATE > < TABLE > Identifier() "(" Field() ( "," Field() )* ")"}
+void Select() : {} { < SELECT > Columns() < FROM > Identifier() [< WHERE > OrCondition()] }
+void Insert() : {} { < INSERT > < INTO > Identifier() "(" Columns() ")" < VALUES > "(" Values() ")"}
+void Update() : {} { < UPDATE > Identifier() < SET > Assignments() [ < WHERE > OrCondition()] }
+void Delete() : {} { < DELETE > < FROM > Identifier() [ < WHERE > OrCondition()] }
+void DropTable() : {} { < DROP > < TABLE > Identifier() }
+void Source() : {} { < SOURCE > String() }
+void Quit() : {} { < QUIT > }
+
+
+// Building Blocks
+void Assignments() : {} { Assignment() ("," Assignment())* }
+void Assignment() : {Token t;} {Identifier() t=< COMPARISON_OPERATOR > Value() { jjtThis.jjtSetValue(t.image); }}
+void Field() : {} { Identifier() Type() }
+void Type() #void : {} { Int() | Char() }
+void Columns() : {} { Wildcard() | Identifier() ("," Identifier())* }
+void Values() : {} { Value() ("," Value())* }
+void OrCondition() : {} { AndCondition() [ < OR > OrCondition() ] }
+void AndCondition() : {} { Condition() [ < AND > AndCondition() ] }
+void Condition() : {Token t;} { Identifier() t=< COMPARISON_OPERATOR > Value() { jjtThis.jjtSetValue(t.image); } }
+
+
+// Primitives
+void Value() #void : {} { Number() | String() }
+void Wildcard() : { Token t; } { t = < WILDCARD > { jjtThis.jjtSetValue(t.image); } }
+void Modifier() : { Token t; } { t = < FIELD_MODIFIERS > { jjtThis.jjtSetValue(t.image); } }
+void Identifier() : { Token t; } { t = < IDENTIFIER > { jjtThis.jjtSetValue(t.image); } }
+void Char() : { Token t; } { t = < CHAR > "(" Number() ")" (Modifier())* { jjtThis.jjtSetValue(t.image); } }
+void Int() : { Token t; } { t = < INT > { jjtThis.jjtSetValue(t.image); } (Modifier())* }
+void String() : { Token t; } { t = < STRING > { jjtThis.jjtSetValue(t.image); } }
+void Number() : { Token t; } { [ t= < ADD_OPERATOR > { jjtThis.jjtSetValue(t); } ] UnsignedNumber() }
+void UnsignedNumber() : { Token t; } { t = < NUMBER_LITERAL > { jjtThis.jjtSetValue(t.image); } }
