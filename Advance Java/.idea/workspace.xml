@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="383cadcc-8b2c-491e-b34a-7c38fb071ea7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Ruby/RubyLect2.progs/RubyLect2.progs/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ruby/RubyLect2.progs/RubyLect2.progs/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ruby/RubyLect2.progs/RubyLect2.progs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ruby/RubyLect2.progs/RubyLect2.progs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T0-CourseIntroduction.ppt" beforeDir="false" afterPath="$PROJECT_DIR$/T0-CourseIntroduction.ppt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +34,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -80,16 +79,17 @@
       <updated>1563570732726</updated>
       <workItem from="1563570743525" duration="66000" />
       <workItem from="1563955916984" duration="1206000" />
+      <workItem from="1564670439957" duration="326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1272000" />
+    <option name="totallyTimeSpent" value="1598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="20" width="1400" height="784" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

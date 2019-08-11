@@ -1,0 +1,15 @@
+Example,Credit_History,Debt,Income,Risk
+1,bad,low,0to30,high
+2,bad,high,30to60,high
+3,bad,low,0to30,high
+4,unknown,high,30to60,high
+5,unknown,high,0to30,high
+6,good,high,0to30,high
+7,bad,low,over60,medium
+8,unknown,low,30to60,medium
+9,good,high,30to60,medium
+10,unknown,low,over60,low
+11,unknown,low,over60,low
+12,good,low,over60,low
+13,good,high,over60,low
+14,good,high,over60,low
