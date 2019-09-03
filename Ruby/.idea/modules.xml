@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Ruby.iml" filepath="$PROJECT_DIR$/.idea/Ruby.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/banko.iml" filepath="$PROJECT_DIR$/.idea/modules/banko.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blog.iml" filepath="$PROJECT_DIR$/.idea/modules/blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chicken.iml" filepath="$PROJECT_DIR$/.idea/modules/chicken.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clovis.iml" filepath="$PROJECT_DIR$/.idea/modules/clovis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clovis2.iml" filepath="$PROJECT_DIR$/.idea/modules/clovis2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clovis3.iml" filepath="$PROJECT_DIR$/.idea/modules/clovis3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/itunes.iml" filepath="$PROJECT_DIR$/.idea/modules/itunes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/itunes2.iml" filepath="$PROJECT_DIR$/.idea/modules/itunes2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/newsite.iml" filepath="$PROJECT_DIR$/.idea/modules/newsite.iml" />
+    </modules>
+  </component>
+</project>
