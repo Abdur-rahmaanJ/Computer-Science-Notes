@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails clovis: development" uuid="9652ed1d-d9e6-4888-a3da-5a69c6fa2c68">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/clovis/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\clovis\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails clovis: test" uuid="238473f0-3da6-47c6-a13e-40136cbef16f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/clovis/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\clovis\db\test.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails banko: development" uuid="fa38820c-c891-48a5-8811-9d43b3d21938">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect10.progs/xRubyLect10.progs/banko/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect10.progs\xRubyLect10.progs\banko\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails clovis2: test" uuid="9e23d5ea-f1fd-4905-a1bb-a26afa749ea5">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/clovis2/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\clovis2\db\test.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails clovis3: development" uuid="14e766f3-7843-4a7e-8bd0-950fd7aa33c7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/clovis3/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\clovis3\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails clovis2: development" uuid="b85182c1-9725-4d77-884f-523deb61dd4c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/clovis2/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\clovis2\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails newsite: development" uuid="f00fcdfa-5be0-42f3-89ce-9d446aeffd48">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect10.progs/xRubyLect10.progs/newsite/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect10.progs\xRubyLect10.progs\newsite\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails banko: test" uuid="d1bf705e-3e22-4ec7-ace0-0a6106940781">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect10.progs/xRubyLect10.progs/banko/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect10.progs\xRubyLect10.progs\banko\db\test.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails itunes: test" uuid="b79328b6-a306-41e3-abfc-256f12fc2368">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect11.progs/RubyLect11.progs/itunes/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect11.progs\RubyLect11.progs\itunes\db\test.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails itunes2: test" uuid="99789c1e-d2d1-483e-bde0-9003529404c7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect11.progs/RubyLect11.progs/itunes2/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect11.progs\RubyLect11.progs\itunes2\db\test.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails chicken: development" uuid="8e5a1b87-1742-46f7-ba10-25fd4860754f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect11.progs/RubyLect11.progs/chicken/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect11.progs\RubyLect11.progs\chicken\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails itunes: development" uuid="938051fb-a3f9-4432-a734-ce7476221be8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect11.progs/RubyLect11.progs/itunes/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect11.progs\RubyLect11.progs\itunes\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails clovis3: test" uuid="1cab40a6-79cb-4410-8c2a-f37dd6f0a892">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/clovis3/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\clovis3\db\test.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails blog: development" uuid="93e32f44-98d3-4879-9447-8ff99cc0c352">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyWeek12.progs/RubyWeek12.progs/blog/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyWeek12.progs\RubyWeek12.progs\blog\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Rails itunes2: development" uuid="466e32b6-093f-4a7c-b429-b51c955d8637">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/RubyLect11.progs/RubyLect11.progs/itunes2/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abhishek Sinha\Documents\Computer-Science-Notes-CSnotes-CompSci-Notes\Ruby\RubyLect11.progs\RubyLect11.progs\itunes2\db\development.sqlite3</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>
