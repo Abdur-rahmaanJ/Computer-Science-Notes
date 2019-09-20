@@ -26,8 +26,16 @@
       <excludeFolder url="file://$MODULE_DIR$/../../RubyLect10.progs/xRubyLect10.progs/newsite/vendor/bundle" />
       <excludeFolder url="file://$MODULE_DIR$/../../RubyLect10.progs/xRubyLect10.progs/newsite/vendor/cache" />
     </content>
-    <orderEntry type="jdk" jdkName="ruby-2.6.3-p62" jdkType="RUBY_SDK" />
+    <orderEntry type="jdk" jdkName="ruby-2.6.4-p104" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.17.3, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.11, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v10.3.2, ruby-2.6.4-p104) [gem]" level="application" />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <LOAD_PATH number="0" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/../../RubyLect10.progs/xRubyLect10.progs/newsite/config/locales" />
   </component>
   <component name="RubyModuleProperties">
     <option name="autoCreated" value="true" />

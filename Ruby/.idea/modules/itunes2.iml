@@ -26,8 +26,12 @@
       <excludeFolder url="file://$MODULE_DIR$/../../RubyLect11.progs/RubyLect11.progs/itunes2/vendor/bundle" />
       <excludeFolder url="file://$MODULE_DIR$/../../RubyLect11.progs/RubyLect11.progs/itunes2/vendor/cache" />
     </content>
-    <orderEntry type="jdk" jdkName="ruby-2.6.3-p62" jdkType="RUBY_SDK" />
+    <orderEntry type="jdk" jdkName="ruby-2.6.4-p104" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.17.3, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.11, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v10.3.2, ruby-2.6.4-p104) [gem]" level="application" />
   </component>
   <component name="RubyModuleProperties">
     <option name="autoCreated" value="true" />
