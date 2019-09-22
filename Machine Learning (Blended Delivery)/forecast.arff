@@ -1,0 +1,26 @@
+@relation forecast
+
+@attribute temperature numeric
+@attribute humidity numeric
+@attribute wind_speed numeric
+@attribute go_out {yes,no}
+
+@data
+6,85,30,no
+14,90,35,no
+15,86,8,yes
+21,56,15,yes
+17,67,9,yes
+9,70,16,no
+13,34,11,yes
+17,95,32,no
+14,70,11,yes
+17,80,28,yes
+15,70,6,yes
+16,90,7,yes
+22,75,19,yes
+16,91,28,no
+14,42,8,yes
+7,95,21,no
+12,15,28,no
+14,70,21,no
