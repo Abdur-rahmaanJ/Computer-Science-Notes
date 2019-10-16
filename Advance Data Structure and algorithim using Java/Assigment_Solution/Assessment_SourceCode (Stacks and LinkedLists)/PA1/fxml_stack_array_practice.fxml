@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- ***** 1. Student code starts here -->
+<!-- add the code to this element definition to specify  
+  the controller as ArrayPractice1Controller -->
+<BorderPane fx:id="bp" fx:controller="StackArrayPracticeController" 
+            xmlns:fx="http://javafx.com/fxml" >
+        
+  <top>
+         
+    <VBox>     
+    <HBox fx:id="hBox1" alignment="center" spacing="10" >
+      <Label text="Enter a value to push onto the stack" fx:id="message" />
+      <TextField fx:id="scoreInput" minWidth="5" />
+      <Button text="push" fx:id="push"    
+          onAction="#push"/>
+      <Button text="pop" fx:id="pop"    
+          onAction="#pop"/>    
+
+    </HBox>
+    
+    </VBox>
+  </top>
+  
+</BorderPane>
+

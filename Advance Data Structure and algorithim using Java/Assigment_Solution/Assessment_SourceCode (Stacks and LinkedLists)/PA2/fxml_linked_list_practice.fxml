@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="bp" fx:controller="LinkedListPracticeController" 
+            xmlns:fx="http://javafx.com/fxml" >
+        
+  <top>     
+    <HBox fx:id="hBox1" alignment="center" spacing="10" >
+
+    </HBox>
+  </top>
+  <left>
+    <VBox fx:id="vBox1">
+      <Label text="Node data" fx:id="message" />
+      <TextField fx:id="value" minWidth="5" maxWidth="75" />
+
+      <Button text="insert" fx:id="insert" minWidth="5" maxWidth="75"   
+          onAction="#activity"/>
+      <Button text="delete" fx:id="delete" minWidth="5" maxWidth="75"   
+          onAction="#activity"/>
+      <Button text="toString" fx:id="traverse" minWidth="5" maxWidth="75"
+          onAction="#activity"/>
+      <Button text="count" fx:id="count" minWidth="5" maxWidth="75"   
+          onAction="#activity"/>
+      <Button text="clear" fx:id="clear" minWidth="5" maxWidth="75"  
+          onAction="#activity"/>
+
+    </VBox>
+  </left>
+  <bottom>
+    
+    <TextArea fx:id="comments" prefHeight="100.0" prefWidth="200.0"  />
+    
+  </bottom>
+  
+</BorderPane>
+

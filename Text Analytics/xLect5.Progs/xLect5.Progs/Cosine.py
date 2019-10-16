@@ -9,16 +9,14 @@ vector_dict = {}
 #Just loads in all the documents
 def load_docs():
  print("Loading docs...")
- doc1=('d1', 'LSI tutorials and fast tracks')
- doc2=('d2', 'books on semantic analysis')
- doc3=('d3', 'learning latent semantic indexing')
- doc4=('d4', 'advances in structures and advances in indexing')
- doc5=('d5', 'analysis of latent structures')
- return [doc1, doc2,doc3,doc4,doc5]
+ doc1=('d1', 'To Be The Best You Need The Best')
+ doc2=('d2', 'To Be The Best You require The Good')
+ doc3=('d3', 'To Be The Best You Needed To be The Wonderful')
+ return [doc1, doc2,doc3]
 
 #Computes TF for words in each doc, DF for all features in all docs; finally whole Tf-IDF matrix
 def process_docs(all_dcs):
- stop_words = [ 'of', 'and', 'on','in' ]
+ stop_words = [ 'To', 'Be', 'The' ]
  all_words = []
  counts_dict = {}
  for doc in all_dcs:
