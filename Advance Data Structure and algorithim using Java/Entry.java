@@ -1,5 +1,11 @@
-public interface Entry<K, V> {
-	public K key();
+package net.datastructures;
 
-	public V value();
+//begin#fragment Entry
+/** Interface for a key-value pair entry **/
+public interface Entry<K,V> {
+  /** Returns the key stored in this entry. */
+  public K getKey();
+  /** Returns the value stored in this entry. */
+  public V getValue();
 }
+//end#fragment Entry
