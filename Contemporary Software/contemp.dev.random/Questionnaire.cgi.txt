@@ -1,0 +1,62 @@
+#! /usr/bin/perl -w
+
+###################################
+###################################
+use warnings;
+use strict;
+use CGI;
+use CGI::Carp qw/fatalsToBrowser/;
+ 
+   print("Content-type: text/html\n\n");
+   my(%frmFlds);
+   my $output_file = "/home/cs/meloc/public_html/30160/quest/30160QuestionnaireAnswers.csv";
+   open(OUTF, ">>$output_file");
+  
+   &getFormData();
+   foreach my $name ("Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15", "comments", ) {
+    if (exists $frmFlds{$name}) {
+        my $value = $frmFlds{$name};
+	if ($name eq "comments") {
+ 	       print OUTF "$value";
+	} else {
+	       print OUTF "$value,";
+	}
+    } else {
+	print OUTF "not given,";
+    }
+   }
+   print OUTF "\n";
+   
+   close OUTF;
+   &usrMsg();
+   exit; 
+
+   sub getFormData {
+      my($in) = "";
+      read(STDIN, $in, $ENV{'CONTENT_LENGTH'});
+      foreach my $pair (split(/\n/, $in)) {
+	 chomp $pair;
+	 my($key, $value) = split(/=/, $pair);
+         $key = decodeURL($key);
+         $value = decodeURL($value);
+         $frmFlds{$key} = $value;
+      }
+    }
+    
+    sub decodeURL {
+	my $decoded = shift;
+        chomp $decoded;
+        $decoded =~ s/\+/ /gm;	
+        $decoded =~ s/\015//g;
+        $decoded =~ s/%(..)/pack('c', hex($1))/eg;      	
+	return($decoded);
+    }
+
+    sub usrMsg {
+    print("<HTML>\n");
+    print("<HEAD><TITLE>Confirm Form</TITLE></HEAD>\n");
+    print("<BODY>\n");
+    print("<p>Your form has been submitted.</p>\n");
+    print("</BODY>\n");
+    print("</HTML>\n");
+    }

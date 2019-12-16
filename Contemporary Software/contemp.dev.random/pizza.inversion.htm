@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.enteract.com/~bradapp/docs/pizza-inv.html -->
+<HTML><HEAD><TITLE>Pizza Inversion - A Pattern for Efficient Resource Consumption</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.600" name=GENERATOR></HEAD>
+<BODY>
+<CENTER>
+<H2>Pizza Inversion - a Pattern for Efficient Resource Consumption</H2>
+<P>by <B>Brad Appleton</B> <I>&lt;<A 
+href="mailto:bradapp@enteract.com">bradapp@enteract.com</A>&gt;</I><BR><I><A 
+href="http://www.enteract.com/~bradapp/">http://www.enteract.com/~bradapp/</A></I><BR><SMALL>last 
+modified 02/12/1999</SMALL> 
+<P><SMALL>� 1995-1999 by Brad Appleton. All rights reserved.</SMALL> </CENTER>
+<P><I>Pizza Inversion</I> may sound like a cheesy name for a pattern, but it 
+describes a recurring solution to a problem that is of fundamental significance 
+to most software developers I know. I find myself using it much more frequently 
+than anything in the now famous <I>Design Patterns</I> 
+book<SUP><I>[1]</I></SUP>. Keep reading and I'm certain you'll soon find 
+yourself agreeing with me. 
+<P>
+<HR>
+
+<TABLE cellSpacing=2 cellPadding=7 width="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="50%"><BIG>Pizza Inversion</BIG> </TD>
+    <TD vAlign=top align=right width="50%">Object Consumptional 
+</TD></TR></TBODY></TABLE>
+<HR>
+
+<H3>Intent</H3>Efficiently internalize the external state of multiple hot pizza 
+slices, while encapsulating thermodynamic heat-transfer and minimizing the 
+latency time to access the pizza's surface. 
+<H3>Also Known As</H3>Pizza Sandwich 
+<H3>Motivation</H3>One of the more significant problems faced by software 
+engineers revolves around the need for nutritional sustenance while maintaining 
+personal productivity. The impossibly hectic schedules of most software 
+development projects demands that developers spend more time developing software 
+than satisfying their hunger. At the same time, developers need food to remain 
+healthy, alert, and productive. There is even anecdotal evidence to suggest this 
+factor is sometimes more important than sleep. 
+<P>The consumption of pizza (often in a group setting) is a commonly pursued 
+remedy for addressing this important issue. Pizza often tastes, and smells, 
+better than more traditional "fast foods," and is very rich in dairy-content and 
+carbohydrates. Also, it is usually delivered, so you don't have to wait in line 
+to order your food, or for it to be prepared and brought to your table. 
+<P>Because efficiency and scheduling are <EM>always</EM> important concerns, 
+developers frequently need to consume multiple slices of round pizza in a short 
+period of time. The tomato sauce tends to be very hot, however, and the cheese 
+on top of it adds to the problem by forming an insulating layer that locks in 
+the heat. To make matters worse, cheese contains non-negligible levels of fat 
+and, when melting, forms pockets of grease which can reach exceedingly high 
+temperatures (a condition aggravated by fatty toppings like ground beef, 
+pepperoni, and Italian sausage). 
+<P>When trying to eat pizza quickly, the grease on the cheese and the hot tomato 
+sauce underneath can severely burn the roof of one's mouth. This is not only 
+painful, but may also damage the taste buds in this sensitive region of the 
+mouth, rendering them useless for a short duration. 
+<P>The naive approach of waiting for the pizza to cool may at first seem 
+reasonable. But the resultant increase in the latency-time between when the 
+pizza arrives and when it has cooled enough for human consumption imposes an 
+unacceptable performance penalty that impedes programmer productivity. 
+<P>Therefore, it is desirable to find a method for eating the pizza quickly 
+without burning one's mouth. At the same time, one still wants to experience the 
+full splendor that comes from the taste and smell of a savory pizza fresh from 
+the oven. 
+<P>One such method involves inverting one slice of pizza on top of another 
+slice: 
+<P align=center><IMG height=165 src="Pizza Inversion_files/pizza-inv.gif" 
+width=281>
+<P>By inverting one of the pizza slices as shown above, the resulting design 
+structure forms a layered hierarchy in which the crust encapsulates the cheese, 
+sauce, and toppings from the top and bottom of the mouth. This insulates the 
+mouth from the hot cheese and sauce while permitting the pizza to be consumed at 
+approximately twice the usual rate. 
+<H3>Applicability</H3>Use Pizza Inversion when: 
+<UL>
+  <LI>you have multiple slices of hot, tasty pizza that you wish to consume; 
+  <LI>you want to eat the pizza quickly and cleanly, without burning the roof of 
+  your mouth; and 
+  <LI>you are in a very informal social setting. </LI></UL>
+<H3>Structure</H3>
+<P align=center><IMG src="Pizza Inversion_files/pizza-inv-uml.jpg">
+<P>
+<H3>Participants</H3>
+<UL>
+  <LI><B>PizzaSlice</B> 
+  <UL>-- objects of our desire that need to be quickly consumed </UL>
+  <P></P>
+  <LI><B>Crust</B> 
+  <UL>-- forms the flat, bread-based layer at the bottom of a PizzaSlice </UL>
+  <P></P>
+  <LI><B>Sauce</B> 
+  <UL>-- hot tomato-based liquid that sits atop the Crust </UL>
+  <P></P>
+  <LI><B>Cheese</B> 
+  <UL>-- melted mozzarella dairy-product resting above the sauce </UL>
+  <P></P>
+  <LI><B>Toppings</B> 
+  <UL>-- food items sprinkled over Cheese or Sauce to add flavor and texture 
+  </UL>
+  <P></P>
+  <LI><B>Consumer</B> 
+  <UL>-- hungry individual in a hurry </UL>
+  <P></P>
+  <LI><B>Hands</B> 
+  <UL>-- dexterous opposable appendages used by Consumer to manipulate 
+    PizzaSlices </UL>
+  <P></P>
+  <LI><B>Mouth</B> 
+  <UL>-- oral orifice of the consumer into which the pizza must enter before 
+    consumption </UL></LI></UL>
+<H3>Collaborations</H3>
+<UL>
+  <LI>Crust, Sauce, Cheese, and Toppings are respectively layered in bottom-up 
+  order to form PizzaSlices. 
+  <P></P>
+  <LI>Cheese layers of the two PizzaSlices are juxtaposed together with 
+  symmetric orientations. 
+  <P></P>
+  <LI>Hands take the Crust of one PizzaSlice and physically invert it by folding 
+  its Cheese-side over the top of the Cheese-side of other PizzaSlice, until the 
+  former is fully inverted, with each slice forming an approximate mirror-image 
+  of the other along the Cheese plane. 
+  <P></P>
+  <LI>Hands bring both resulting PizzaSlices simultaneously toward Mouth. 
+  <P></P>
+  <LI>Upon entry of PizzaSlices into Mouth, Mouth quickly chews PizzaSlices, 
+  then swallows them. </LI></UL>
+<H3>Consequences</H3>
+<UL>
+  <LI>Consumed portions of PizzaSlices have Crust on the top and bottom, forming 
+  an effective layer of insulation that encapsulates the hot Cheese, Sauce, and 
+  Toppings from the temperature-sensitive roof of the Mouth. 
+  <P></P>
+  <LI>Through-put is increased by twice the normal rate because PizzaSlices 
+  enter the Mouth two slices at a time instead of one. 
+  <P></P>
+  <LI>Cheese, Sauce, and Toppings are each predominantly confined to their own 
+  domains in the resulting layered hierarchy. This "separation of concerns" 
+  forms a Facade<SUP><I>[1]</I></SUP> which hides internal state information 
+  between the two Crusts, creating an Adaptor<SUP><I>[1]</I></SUP> between the 
+  Mouth, and the surface of the PizzaSlices 
+  <P></P>
+  <LI>Latency time is reduced because Hands do not wait for PizzaSlices to cool 
+  before bringing them toward Mouth to access the PizzaSlice surface. 
+  <P></P>
+  <LI>Pizza with a particularly thick crust, or stuffed pizza (Chicago style, or 
+  otherwise) results in a very tall/deep hierarchy which may prove unwieldy for 
+  consumption. 
+  <P></P>
+  <LI>Excessive use of this pattern may cause "object bloat" for the Consumer. 
+  <P></P>
+  <LI>Trades off polymorphism in favor of endomorphism. 
+  <P></P>
+  <LI>The resultant intake of high levels of cholesterol may result in blockage 
+  of the arteries and cause a health-risk for the Consumer, necessitating the 
+  use of an EmergencyCardiacCare object. 
+  <P></P>
+  <LI>The emphasis on efficiency causes the Consumer to miss out on some (but 
+  not all) of the visual and olfactory experience of pizza eating: Rather than 
+  taking in the sight and full aroma of the cheese and the colorful array of 
+  toppings, all you see is crust. The pizza still tastes great, but it's less 
+  thrilling. </LI></UL>
+<H3>Implementation</H3>Consider the following issues when applying the Pizza 
+Inversion pattern: 
+<OL>
+  <LI><BIG><I>Data Compression and Loss:</I></BIG> One needs to be extra careful 
+  when using only a single slice and/or when the pizza has extra cheese because 
+  then excess cheese can easily ooze out the side and burn your mouth. In this 
+  case, use your Hands to press the pieces (or halves) together to and detach 
+  the excess Cheese, Toppings, and Sauce, before inserting into Mouth. 
+  <P></P>
+  <LI><BIG><I>Singleton Slice:</I></BIG> If you have a single slice of pizza you 
+  can envision an imaginary line lengthwise down the center of the slice that 
+  divides it into two symmetrical halves. Fold one half of the slice over (and 
+  on top of) the other half. Another variation that works with a single slice 
+  (assuming you have a round pizza) is to fold the pointed end of the slice 
+  towards the crust end. You don't get full slice coverage this way but some 
+  have expressed a preference for this particular implementation. 
+  <P></P>
+  <LI><BIG><I>Olfactory Method:</I></BIG> One of the desirable aspects of eating 
+  pizza isn't just the taste, but also the smell of the steaming hot cheeses, 
+  toppings, and fresh-baked crust. Folding one slice over another slice lessens 
+  the effect of this pleasing olfactory sensation. One commonly employed 
+  compromise is to take a brief moment at the very beginning to fully enjoy the 
+  sight and smell of the pizza before commencing with its consumption. Spend a 
+  good half-minute or so observing and inhaling the full sight and aroma of the 
+  tomatoes, mozzarella, fresh basil, garlic, onion and other spices, and all of 
+  the toppings. Once the visual and olfactory organs have been used to employ 
+  Observer<SUP><I>[1]</I></SUP> and Reflection<SUP><I>[2]</I></SUP> for the 
+  non-oral aspects of your pizza-eating experience, begin folding and then 
+  consuming the PizzaSlices promptly thereafter. This imposes a small but 
+  tolerable performance penalty due to increased latency-time prior to oral 
+  access. 
+  <P></P>
+  <LI><BIG><I>Multi-Slicing:</I></BIG> A number of adjacent and attached slices 
+  may be folded over onto an equivalent number of adjacent slices. Hence one 
+  could fold two pieces onto two pieces, three pieces onto three pieces, and so 
+  on. For "individual size" pizzas, simply fold the entire half of the pizza 
+  over onto the other half. 
+  <P></P>
+  <LI><BIG><I>Mix-In Slices:</I></BIG> This works particularly well for 
+  collaborations involving large numbers of consuming objects. Rather than 
+  trying to satisfy each Consumer's favorite combination of Toppings, simply 
+  order relatively few Toppings on each pizza and let each Consumer use 
+  PizzaSlices from different pizzas to create their own custom configuration of 
+  Toppings. </LI></OL>
+<H3>Known Uses</H3>
+<UL>
+  <LI>Used frequently at Domino's, Little Ceasar's, Pizza Hut, and Papa John's 
+  Pizza 
+  <LI>Various scenes from the movie "Mystic Pizza" 
+  <LI>The opening sequence of the movie "Saturday Night Fever" 
+  <LI>A "calzone" is basically a pre-fabricated instance of Pizza Inversion. 
+  </LI></UL>
+<P>The historical origins influencing this method of pizza consumption may be 
+traced back to the "Pita" and the Earl of Sandwich. 
+<H3>Related Patterns</H3>
+<UL>
+  <LI>Adapter<SUP><I>[1]</I></SUP> is used to create a 
+  Facade<SUP><I>[1]</I></SUP> that protects the Mouth from the surface of the 
+  PizzaSlices 
+  <P></P>
+  <LI>Hands play the role of Mediator<SUP><I>[1]</I></SUP> between the 
+  PizzaSlices and the Mouth. 
+  <P></P>
+  <LI>Observer<SUP><I>[1]</I></SUP> and Reflection<SUP><I>[2]</I></SUP> 
+  participate in the <I>Olfactory Method</I> implementation of this pattern. 
+  <P></P>
+  <LI>Hans Rohnert<SUP><I>[3]</I></SUP> describes the relationship between Pizza 
+  Inversion, and the Layers<SUP><I>[2]</I></SUP> and 
+  Whole-Part<SUP><I>[2]</I></SUP> patterns: 
+  <BLOCKQUOTE>[Pizza Inversion is related to] the Relaxed Layered System 
+    variant of Layers because the respective toppings and especially the cheeses 
+    from the two slices cannot maintain a clear separation between the layers. 
+    Rather, there is direct interaction between different components in both 
+    layers. We even can safely assume that objects will migrate, mostly from the 
+    top to the lower layer. 
+    <P>In a way Pizza Inversion seems related to Whole-Part as well .... 
+    Intuitively speaking two slices layered on top of each other are the two 
+    constituent parts. But Whole-Part explicitly states that direct access to 
+    the parts is not possible. </P></BLOCKQUOTE>
+  <P></P>
+  <LI>A whole pizza is a Composite<SUP><I>[1]</I></SUP> of PizzaSlices. 
+  <P></P>
+  <LI>Iterator<SUP><I>[1]</I></SUP> may be used to apply Pizza Inversion for an 
+  entire pizza, or a collection of pizzas. 
+  <P></P>
+  <LI>Abstract Factory<SUP><I>[1]</I></SUP> and Builder<SUP><I>[1]</I></SUP> are 
+  commonly used by pizza providers to create the pizza, and 
+  Decorator<SUP><I>[1]</I></SUP> is commonly used to apply the Toppings. 
+  <P></P>
+  <LI>A Visitor<SUP><I>[1]</I></SUP> is frequently employed to deliver the 
+  pizza. 
+  <P></P>
+  <LI><I>Not related</I>: Flyweight<SUP><I>[1]</I></SUP> </LI></UL>
+<H3>Acknowledgements</H3>
+<UL>
+  <LI>Robert Martin encouraged me to document and disseminate Pizza Inversion 
+  after I described it to him during lunch at Tonelli's in the summer of 1995. 
+  <P></P>
+  <LI>Several subscribers to the patterns-discussion mailing list provided me 
+  with many suggestions for improvement: Eleanor J. Barnes, John Hartley, 
+  Richard Gabriel, Kent Beck, Thomas Gerth, Eric Pearl, Linda Rising, Jens 
+  Coldeway, Hans Wegener, and Hans Rohnert. 
+  <P></P>
+  <LI>Participants in the PLoP'97 example writer's workshop for this pattern 
+  made numerous useful comments: Brian Foote, Dirk Riehle, Linda Rising, Doug 
+  Schmidt, and Bobby Woolf. </LI></UL>
+<H3>References</H3>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD vAlign=top><SUP><I>[1]</I></SUP> </TD>
+    <TD>E. Gamma, R. Helm, R. Johnson, J. Vlissides. <I>Design Patterns: 
+      Elements of Reusable Object-Oriented Software</I>, Addison-Wesley, 
+      Reading, MA, 1995. </TD></TR>
+  <TR>
+    <TD vAlign=top><SUP><I>[2]</I></SUP> </TD>
+    <TD>F. Buschmann, R. Meunier, H. Rohnert, P. Sommerlad, M. Stal. 
+      <I>Pattern-Oriented Software Architecture: A System of Patterns</I>, John 
+      Wiley and Sons, New York, NY, 1996. </TD></TR>
+  <TR>
+    <TD vAlign=top><SUP><I>[3]</I></SUP> </TD>
+    <TD>Hans Rohnert. personal correspondence, August 1997. 
+</TD></TR></TBODY></TABLE></BODY></HTML>
