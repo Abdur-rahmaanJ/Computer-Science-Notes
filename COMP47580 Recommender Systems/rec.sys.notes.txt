@@ -1,0 +1,154 @@
+# Assessment Components
+
+Hi Gregoire,
+
+Please find below an explanation for each of the slides in the attachment. 
+Just to note that it's best to meet with me after a lecture or during a practical session to go though questions like these.
+
+Slide: People who like X also like Y...
+- There is an example given in the lecture notes on the following slide (#35) which provides a worked-example showing how to apply this approach; 
+hopefully the example should help to clarify this.
+
+Slide: Making Predictions – Average Ratings (aside)
+- This shows an alternative approach to simply returning the mean rating as a prediction for an item. Specifically it takes the user and item biases into account 
+- i.e. how  a user's ratings compare to the global mean rating calculated over all item ratings, and how the ratings assigned to an item compare to the global mean rating. 
+So, for example, a higher prediction is made for users who generally assign higher ratings to items; and a lower prediction is made for more critical users who tend to assign lower ratings to items.
+
+Slide: Reddit News Ranking
+- There is a document on Moodle ("Reddit Ranking Algorithms") which provides more details on this ranking approach 
+- I recommend that you look through this document and hopefully that should help to clarify matters.
+
+Regards,
+Michael
+
+---
+
+1. Practical project (40% - will be handed out this week, submission Week 7):
+- Implementation of recommender systems & running experiments.
+- A Java framework will be provided provided. (Please note that proficiency in Java is required.)
+- Individual project.
+
+2. In-class test (20% - Week 8/9):
+- MCQ exam.
+
+3. Report (40% - handed out Week 8, submission Week 12):
+- Analysis and discussion of experimental results from part 1.
+- Individual report.
+
+---
+
+## LECTURE 1
+
+1. Practical project (40% - starts Week 3, submission Week 7):
+- Implementation of recommender systems & running experiments.
+- Framework provided. Proficiency in Java is required.
+- Individual project.
+2. In-class test (20% - Week 8/9):
+- MCQ exam.
+3. Report (40% - handed out Week 8, submission Week 12):
+- Analysis and discussion of experimental results from part 1.
+- Individual report.
+
+> AMAZON STARTED REC SYAPS
+
+online vs stores
+- Can carry much more inventory
+- Not limited by space considerations and benefit
+- A miss sold is just another sale
+- Much more choice available to consumers
+
+Collaborative Filtering (CF)
+-  CF – automates the “word-of-mouth” process
+
+> REC SYSTEMS : 
+
+1. collaborative 
+2. content based, 
+3. social 
+4. context based 
+5. demographics 
+6. hybrid
+7. group rs 
+8. conversational RS 
+
+## LECTURE 2
+--- 
+
+rec systems help drive demand down the long tail 
+
+*Main Approaches :*
+
+aggregation opinion recommenders: 
+- based on user preference data
+product association
+- based on relations between items
+content based recommenders
+- based on description 
+
+Begin with aggregated options 
+- how can preference data be obtain 
+- data can be collected EXPLICITLY AND IMPLICITLY
+
+> EXPLICITLY RATINGS: 
+
+- users provide ratings 
+- user profile ratings - less noisy (compared to implicit data) method of gathering preference data but still noisy 
+- cost provision of rating - users need to be convinced there is a benefit in order to make the effort 
+
+ex: 
+- numeric ratings : 1-5 stars
+- ordinal ratings : strongly agree and not
+- binary ratings : votes up and down
+- unary ratings : likes
+
+- ratings : consummation, memory from expectation
+	- issues  less reliable 
+
+>  IMPLICITLY RATINGS: 
+
+not obtained directly from user, instead ratings are inferred from user behavior/activity 
+ex: browsing patterns, links followed not fallowed , tv shows and future releases 
+
+Making Predictions 
+- simple approaches : 5 star rating scale > 4
+- binary rating scale : percentage of upvotes
+---- numbers of liked : 
+---- display fill distribution of ratings to users: 
+
+need to consider distribution of ratings 
+- many users average provide ratings - diverse tastes, average 
+
+> APPROACHES : 
+1. return the mean rating of item 2 
+2. consider the user and item biases : 
+ ---- the overall / 5 
+ 
+ ranking : 
+ top of the list : 
+
+ considerations : 
+	- business imperative 
+	- domain 
+	- popular
+
+## LECTURE 3 
+---
+
+1. Today’s topic:
+- Content-basedrecommendersystems
+- Supports both personal isedandnon-pesonalisedrecommendation
+- Distinguishbetween:
+- Traditiona	
+- content-based approaches (e.g. recommendating documents) •  Case-based approaches (e.g. recommending items described by features)
+- Diversityenhancingapproaches
+- Evaluationmethodologyandmetrics
+
+> Content Based Recommendation 
+
+> Normalised Term Frequency inverse document frequency
+- Apply nTF-IDF weighting to term-document matrix:
+![](~/Documents/igithub/toolbox/mdsnapbox/2019-02-06-15-24-25.png)
+
+> Document-document Similarity
+- gossip 
+- jealous 
