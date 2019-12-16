@@ -1,0 +1,6 @@
+he has a dog            : el tiene un perro 
+the table               : mesa 
+clothes                 : la ropa 
+azul                    : blue 
+the shirt la camisa 
+tienda                  : store
