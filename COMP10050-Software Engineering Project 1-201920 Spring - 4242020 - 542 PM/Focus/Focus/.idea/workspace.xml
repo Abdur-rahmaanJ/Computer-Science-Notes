@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Focus" targetName="Focus" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a95c042f-4f5e-44cd-99c0-4463cc2710eb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1Zg2jNSGLZSEvhUm4eimANPoRx6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Focus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Focus" TARGET_NAME="Focus" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Focus" RUN_TARGET_NAME="Focus">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a95c042f-4f5e-44cd-99c0-4463cc2710eb" name="Default Changelist" comment="" />
+      <created>1585246550930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585246550930</updated>
+      <workItem from="1585246556157" duration="1349000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="492" y="246" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585246619243">
+      <screen x="0" y="23" width="1360" height="711" />
+    </state>
+    <state x="492" y="246" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.23.1360.711@0.23.1360.711" timestamp="1585246619243" />
+    <state x="506" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585247891140">
+      <screen x="0" y="23" width="1360" height="711" />
+    </state>
+    <state x="506" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1360.711@0.23.1360.711" timestamp="1585247891140" />
+    <state x="425" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1585246555157">
+      <screen x="0" y="23" width="1360" height="711" />
+    </state>
+    <state x="425" y="234" key="com.intellij.ide.util.TipDialog/0.23.1360.711@0.23.1360.711" timestamp="1585246555157" />
+  </component>
+</project>

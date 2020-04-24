@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/liliana1/CLionProjects/Focus/game_init.c
+stdio.h
+-
+stdlib.h
+-
+game_init.h
+/Users/liliana1/CLionProjects/Focus/game_init.h
+
+/Users/liliana1/CLionProjects/Focus/game_init.h
+
+/Users/liliana1/CLionProjects/Focus/input_output.c
+stdio.h
+-
+input_output.h
+/Users/liliana1/CLionProjects/Focus/input_output.h
+
+/Users/liliana1/CLionProjects/Focus/input_output.h
+game_init.h
+/Users/liliana1/CLionProjects/Focus/game_init.h
+
+/Users/liliana1/CLionProjects/Focus/main.c
+stdio.h
+-
+input_output.h
+/Users/liliana1/CLionProjects/Focus/input_output.h
+
